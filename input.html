@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>入力ページ</title>
+</head>
+
+<body>
+  <div class="main">
+    <form method="POST">
+      <div>
+        風向<select id="direction" size="1" name="wind_direction">
+          <option value="0">0</option>
+          <option value="1">10</option>
+          <option value="2">20</option>
+          <option value="3">30</option>
+          <option value="4">40</option>
+          <option value="5">50</option>
+          <option value="6">60</option>
+          <option value="7">70</option>
+          <option value="8">80</option>
+          <option value="9">90</option>
+          <option value="10">100</option>
+          <option value="11">110</option>
+          <option value="12">120</option>
+          <option value="13">130</option>
+          <option value="14">140</option>
+          <option value="15">150</option>
+          <option value="16">160</option>
+          <option value="17">170</option>
+          <option value="18">180</option>
+          <option value="19">190</option>
+          <option value="20">200</option>
+          <option value="21">210</option>
+          <option value="22">220</option>
+          <option value="23">230</option>
+          <option value="24">240</option>
+          <option value="25">250</option>
+          <option value="26">260</option>
+          <option value="27">270</option>
+          <option value="28">280</option>
+          <option value="29">290</option>
+          <option value="30">300</option>
+          <option value="31">310</option>
+          <option value="32">320</option>
+          <option value="33">330</option>
+          <option value="34">340</option>
+          <option value="35">350</option>
+          <option value="36">360</option>
+        </select>度
+        風速<select id="speed" size="1">
+          <option value="0">0</option>
+          <option value="1">10</option>
+          <option value="2">20</option>
+          <option value="3">30</option>
+          <option value="4">40</option>
+          <option value="5">50</option>
+          <option value="6">60</option>
+          <option value="7">70</option>
+          <option value="8">80</option>
+          <option value="9">90</option>
+          <option value="10">100</option>
+          <option value="11">110</option>
+          <option value="12">120</option>
+          <option value="13">130</option>
+        </select>m
+        波高<select id="wave" size="1">
+          <option value="0">0</option>
+          <option value="1">0.5</option>
+          <option value="2">1.0</option>
+          <option value="3">1.5</option>
+          <option value="4">2.0</option>
+          <option value="5">2.5</option>
+          <option value="6">3.0</option>
+        </select>m
+      </div>
+      <button type="button" onclick="send();">登録</button>
+    </form>
+  </div>
+
+  <script src="code.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+</body>
+
+</html>
