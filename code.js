@@ -41,19 +41,6 @@ function showIcon() {
   var marker = new google.maps.Marker(markerOptions);
 }
 
-//GPS取得
-function getGps() {
-  navigator.geolocation.getCurrentPosition(showGps);
-}
-
-//GPS表示
-function showGps(position) {
-  // 緯度をアラート表示
-  alert(position.coords.latitude);
-  // 経度をアラート表示
-  alert(position.coords.longitude);
-}
-
 
 //inputのデータをデータベースに
 // ボタンクリック時

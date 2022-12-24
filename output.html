@@ -11,8 +11,6 @@
 </head>
 
 <body style="margin: 0;">
-  <!-- テスト用GPS取得 -->
-  <input type="button" value="GPS取得" onclick="getGps();" />
   <!-- アイコン表示 -->
   <input type="button" value="Icon表示" onclick="showIcon();" />
   <br />
@@ -23,6 +21,11 @@
   <input type="button" value="送信" id="checkButton">
   <br /><br />
 
+  <!-- 表示用ボタン -->
+  <input type="button" value="データ取得" onclick="getGps();" />
+  <br /><br />
+
+  <!-- マップ -->
   <div id="map" style="width:1000px; height:600px"></div>
 
   <script async defer
