@@ -41,6 +41,49 @@ function showIcon() {
   var marker = new google.maps.Marker(markerOptions);
 }
 
+//マップ表示のためのデータ
+var mapPosition = { lat: 35.362528, lng: 139.653631 };
+var opts1 = {
+  zoom: 13.5,
+  mapTypeId: 'terrain',
+  center: mapPosition,
+};
+
+//マップ表示
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map2'), opts1);
+}
+
+//アイコン表示 
+function testshowIcon() {
+  var kakudo = 0;
+  var windSpeed = 3;
+  var latPosition = 35.362745502151;
+  var lngPosition = 139.64707275353;
+
+  var map = new google.maps.Map(document.getElementById('map2'), opts1);
+
+  var arrowPosition = { lat: latPosition, lng: lngPosition };
+  var markerOptions = {
+    map: map,
+    position: arrowPosition,
+    icon: {
+      path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+      strokeColor: 'red',
+      scale: 7,
+      rotation: parseInt(kakudo),
+    },
+    label: {
+      text: windSpeed + 'm\n' + kakudo + '°',
+      fontFamily: 'sans-serif',
+      fontWeight: 'bold',
+      fontSize: '12px'
+    }
+  };
+
+  var marker = new google.maps.Marker(markerOptions);
+}
+
 
 //inputのデータをデータベースに
 // ボタンクリック時
