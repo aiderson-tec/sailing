@@ -34,6 +34,7 @@ button.btn {
   color: #212529;
   border-radius: 0.5rem;
 }
+
 .btn--orange,
 a.btn--orange {
   color: #fff;
@@ -56,3 +57,13 @@ a.btn--blue:hover {
   background: #0000ff;
 }
 
+.btn--green,
+a.btn--green {
+  color: #fff;
+  background-color: #00FF00;
+}
+.btn--g.btn--green,
+a.btn--green:hover {
+  color: #fff;
+  background: #00FF00;
+}
