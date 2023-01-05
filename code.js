@@ -56,7 +56,7 @@ function initMap() {
 
 //アイコン表示 
 function testshowIcon() {
-  var kakudo = 0;
+  var direction = 0;
   var windSpeed = 3;
   var latPosition = 35.362745502151;
   var lngPosition = 139.64707275353;
@@ -71,10 +71,10 @@ function testshowIcon() {
       path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
       strokeColor: 'red',
       scale: 7,
-      rotation: parseInt(kakudo),
+      rotation: parseInt(direction),
     },
     label: {
-      text: windSpeed + 'm\n' + kakudo + '°',
+      text: windSpeed + 'm\n' + direction + '°',
       fontFamily: 'sans-serif',
       fontWeight: 'bold',
       fontSize: '12px'

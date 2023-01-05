@@ -14,12 +14,13 @@
       $sql = "select direction, speed, wave, latposition, lngposition from test_windy_data where datetime between subtime(current_timestamp(), '10:00:00') and current_timestamp();";
       // SQLを実行する
       $statement = $db->query($sql);
-      // foreach文で配列の中身を一行ずつ出力
       $records = $statement->fetchAll();
-      foreach ($records as $row) {
-        "<script type='text/javascript'>alert('" . $row['direction'] . "');</script>";
-        echo $alert2;
+      // foreach文で配列の中身を一行ずつ多次元配列dataに入れていく
+      $data = [];
+      foreach ($records as $record) {
+        $data[] = [$record['direction'], $record['speed'], $record['latposition'], $record['lngposition']];
       }
+      
     } catch (PDOException $e) {
       $isConnect = false;
       $msg = "MySQL への接続に失敗しました。";
@@ -80,9 +81,6 @@ echo <<<EOM
     <form action="test_output.php" method="POST">
       <input type="submit" value="Icon表示" name="show">
     </form>
-    <br /><br />
-
-    <div id="sampleArea">サンプル1</div>
     <br /><br />
 
     <!-- マップ -->
