@@ -1,4 +1,5 @@
-//マップ表示のためのデータ
+// output.html用
+// マップ表示のためのデータ
 var mapPosition = { lat: 35.361344, lng: 139.662262 };
 var opts1 = {
   zoom: 13.5,
@@ -6,12 +7,12 @@ var opts1 = {
   center: mapPosition,
 };
 
-//マップ表示
+// 初期のマップ表示
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), opts1);
 }
 
-//アイコン表示 
+// ボタン押した後のマップとアイコン表示 
 function showIcon() {
   var kakudo = 0;
   var windSpeed = 3;
@@ -41,60 +42,59 @@ function showIcon() {
   var marker = new google.maps.Marker(markerOptions);
 }
 
-//マップ表示のためのデータ
-var mapPosition = { lat: 35.362528, lng: 139.653631 };
-var opts1 = {
+
+// test_output.php用
+// マップ表示のためのデータ
+var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
+var opts2 = {
   zoom: 13.5,
   mapTypeId: 'terrain',
-  center: mapPosition,
+  center: mapPosition2,
 };
 
 //マップ表示
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map2'), opts1);
+function initMap2() {
+  var map = new google.maps.Map(document.getElementById('map2'), opts2);
 }
 
-//アイコン表示 
-function testshowIcon() {
-  var direction = 0;
-  var windSpeed = 3;
-  var latPosition = 35.362745502151;
-  var lngPosition = 139.64707275353;
+//アイコン表示
+function testShowIcon(){
+  json.forEach(function (value) {
+    var direction = value[0];
+    var windSpeed = value[1];
+    var latPosition = value[2];
+    var lngPosition = value[3];
 
-  var map = new google.maps.Map(document.getElementById('map2'), opts1);
+    var arrowPosition = {
+      lat: latPosition,
+      lng: lngPosition
+    };
+    var map = new google.maps.Map(document.getElementById('map2'), opts2);
 
-  var arrowPosition = { lat: latPosition, lng: lngPosition };
-  var markerOptions = {
-    map: map,
-    position: arrowPosition,
-    icon: {
-      path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
-      strokeColor: 'red',
-      scale: 7,
-      rotation: parseInt(direction),
-    },
-    label: {
-      text: windSpeed + 'm\n' + direction + '°',
-      fontFamily: 'sans-serif',
-      fontWeight: 'bold',
-      fontSize: '12px'
+    var markerOptions = {
+      map: map,
+      position: arrowPosition,
+      icon: {
+        path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+        strokeColor: 'red',
+        scale: 7,
+        rotation: parseInt(direction),
+      },
+      label: {
+        text: windSpeed + 'm\n' + direction + '°',
+        fontFamily: 'sans-serif',
+        fontWeight: 'bold',
+        fontSize: '12px'
+      }
     }
-  };
-
-  var marker = new google.maps.Marker(markerOptions);
+  });
 }
 
 
+//input.html用
 //inputのデータをデータベースに
-// ボタンクリック時
-/*$(document).ready(function () {
-  $('#send').click(function () {
-    // 位置情報の取得可否により分岐
-    navigator.geolocation.getCurrentPosition(success, fail);
-  });
-});*/
 function send() {
-  navigator.geolocation.getCurrentPosition(success,fail);
+  navigator.geolocation.getCurrentPosition(success, fail);
 }
 
 // 位置情報が取得できた場合
