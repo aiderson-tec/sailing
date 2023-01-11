@@ -42,7 +42,7 @@ function showIcon() {
   var marker = new google.maps.Marker(markerOptions);
 }
 
-
+/*
 // test_output.php用
 // マップ表示のためのデータ
 var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
@@ -58,7 +58,7 @@ function initMap2() {
 }
 
 //アイコン表示
-function testShowIcon(){
+function testShowIcon() {
   json.forEach(function (value) {
     var direction = value[0];
     var windSpeed = value[1];
@@ -89,7 +89,7 @@ function testShowIcon(){
     }
   });
 }
-
+*/
 
 //input.html用
 //inputのデータをデータベースに
@@ -135,4 +135,59 @@ function fail(error) {
   if (error.code == 1) alert('位置情報を取得する時に許可がない')
   if (error.code == 2) alert('何らかのエラーが発生し位置情報が取得できなかった。')
   if (error.code == 3) alert('タイムアウト　制限時間内に位置情報が取得できなかった。')
+}
+
+//test.htmlに表示するための関数
+function test() {
+  $.ajax({
+    type: "post",
+    url: "test.php",
+    // 通信が成功した場合　
+    success: function (data, dataType) {
+      var json = JSON.parse(data);
+      //alert(json[0][0]); // サーバーサイドからの返答を表示させてみる
+      var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
+      var opts2 = {
+        zoom: 13.5,
+        mapTypeId: 'terrain',
+        center: mapPosition2,
+      };
+      var map3 = new google.maps.Map(document.getElementById('map3'), opts2);
+      json.forEach(function (value) {
+        var kakudo = value[0];
+        var windSpeed = value[1];
+        var latPosition = Number(value[2]);
+        var lngPosition = Number(value[3]);
+
+        var arrowPosition = {
+          lat: latPosition,
+          lng: lngPosition
+        };
+
+        var arrowPosition = { lat: latPosition, lng: lngPosition };
+        var markerOptions = {
+          map: map3,
+          position: arrowPosition,
+          icon: {
+            path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+            strokeColor: 'red',
+            scale: 7,
+            rotation: parseInt(kakudo),
+          },
+          label: {
+            text: windSpeed + 'm\n' + kakudo + '°',
+            fontFamily: 'sans-serif',
+            fontWeight: 'bold',
+            fontSize: '12px'
+          }
+        };
+        var marker = new google.maps.Marker(markerOptions);
+
+      });
+    },
+    // 通信が失敗した場合
+    error: function () {
+      alert('失敗らしい');
+    }
+  });
 }
