@@ -67,3 +67,14 @@ a.btn--green:hover {
   color: #fff;
   background: #00FF00;
 }
+
+.btn--lightblue,
+a.btn--lightblue {
+  color: #fff;
+  background-color: #87CEFA;
+}
+.btn--g.btn--lightblue,
+a.btn--lightblue:hover {
+  color: #fff;
+  background: #87CEFA;
+}

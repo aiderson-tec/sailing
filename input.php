@@ -1,9 +1,6 @@
 <?php
 header("Content-type: text/plain; charset=UTF-8");
 
-//php接続確認用
-//echo '<script>alert("ようこそのWebの世界へ")</script>';
-
 // POST変数を取得
 $boat_id = 1;
 $direction = $_POST['direction'];
@@ -26,7 +23,6 @@ try {
   //値が空のままSQL文をセット
   $stmt = $db->prepare($sql);
   // 挿入する値を配列に格納
-  //$params = array(':boat_id' => $boat_id, ':direction' => $direction, ':speed' => $speed, ':wave' => $wave, ':latposition' => $lat, ':lngposition' => $lon);
   $stmt->bindParam(':boat_id',  $boat_id);
   $stmt->bindParam(':direction', $direction);
   $stmt->bindParam(':speed', $speed);

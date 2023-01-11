@@ -42,54 +42,6 @@ function showIcon() {
   var marker = new google.maps.Marker(markerOptions);
 }
 
-/*
-// test_output.php用
-// マップ表示のためのデータ
-var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
-var opts2 = {
-  zoom: 13.5,
-  mapTypeId: 'terrain',
-  center: mapPosition2,
-};
-
-//マップ表示
-function initMap2() {
-  var map = new google.maps.Map(document.getElementById('map2'), opts2);
-}
-
-//アイコン表示
-function testShowIcon() {
-  json.forEach(function (value) {
-    var direction = value[0];
-    var windSpeed = value[1];
-    var latPosition = value[2];
-    var lngPosition = value[3];
-
-    var arrowPosition = {
-      lat: latPosition,
-      lng: lngPosition
-    };
-    var map = new google.maps.Map(document.getElementById('map2'), opts2);
-
-    var markerOptions = {
-      map: map,
-      position: arrowPosition,
-      icon: {
-        path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
-        strokeColor: 'red',
-        scale: 7,
-        rotation: parseInt(direction),
-      },
-      label: {
-        text: windSpeed + 'm\n' + direction + '°',
-        fontFamily: 'sans-serif',
-        fontWeight: 'bold',
-        fontSize: '12px'
-      }
-    }
-  });
-}
-*/
 
 //input.html用
 //inputのデータをデータベースに
@@ -111,7 +63,7 @@ function success(pos) {
   // サーバーサイドへPOSTする
   $.ajax({
     type: "post",
-    url: "server_side.php",
+    url: "input.php",
     data: {
       "lat": position.lat,
       "lon": position.lon,
@@ -137,7 +89,22 @@ function fail(error) {
   if (error.code == 3) alert('タイムアウト　制限時間内に位置情報が取得できなかった。')
 }
 
-//test.htmlに表示するための関数
+
+// test.htmlに表示するための関数
+// マップ表示のためのデータ
+var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
+var opts2 = {
+  zoom: 13.5,
+  mapTypeId: 'terrain',
+  center: mapPosition2,
+};
+
+//  初期のマップ表示
+function initMap2() {
+  var map = new google.maps.Map(document.getElementById('map2'), opts2);
+}
+
+// データベースから出力
 function test() {
   $.ajax({
     type: "post",
@@ -145,14 +112,7 @@ function test() {
     // 通信が成功した場合　
     success: function (data, dataType) {
       var json = JSON.parse(data);
-      //alert(json[0][0]); // サーバーサイドからの返答を表示させてみる
-      var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
-      var opts2 = {
-        zoom: 13.5,
-        mapTypeId: 'terrain',
-        center: mapPosition2,
-      };
-      var map3 = new google.maps.Map(document.getElementById('map3'), opts2);
+      var map3 = new google.maps.Map(document.getElementById('map2'), opts2);
       json.forEach(function (value) {
         var kakudo = value[0];
         var windSpeed = value[1];
@@ -181,8 +141,8 @@ function test() {
             fontSize: '12px'
           }
         };
-        var marker = new google.maps.Marker(markerOptions);
 
+        var marker = new google.maps.Marker(markerOptions);
       });
     },
     // 通信が失敗した場合
