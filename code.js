@@ -81,7 +81,6 @@ function success(pos) {
     }
   });
 }
-
 // 位置情報が取得できなかった場合
 function fail(error) {
   if (error.code == 1) alert('位置情報を取得する時に許可がない')
@@ -90,7 +89,7 @@ function fail(error) {
 }
 
 
-// test.htmlに表示するための関数
+// test.html用
 // マップ表示のためのデータ
 var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
 var opts2 = {
@@ -100,7 +99,7 @@ var opts2 = {
 };
 
 //  初期のマップ表示
-function initMap2() {
+function initTestMap() {
   var map = new google.maps.Map(document.getElementById('map2'), opts2);
 }
 
@@ -112,7 +111,7 @@ function test() {
     // 通信が成功した場合　
     success: function (data, dataType) {
       var json = JSON.parse(data);
-      var map3 = new google.maps.Map(document.getElementById('map2'), opts2);
+      var map2 = new google.maps.Map(document.getElementById('map2'), opts2);
       json.forEach(function (value) {
         var kakudo = value[0];
         var windSpeed = value[1];
@@ -126,7 +125,7 @@ function test() {
 
         var arrowPosition = { lat: latPosition, lng: lngPosition };
         var markerOptions = {
-          map: map3,
+          map: map2,
           position: arrowPosition,
           icon: {
             path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
@@ -150,4 +149,11 @@ function test() {
       alert('失敗らしい');
     }
   });
+}
+
+
+// data.html用
+// 表の表示
+function show() {
+  
 }
