@@ -22,29 +22,29 @@
         <option value="2027">2027</option>
       </select>年
       <select id="month" size="1">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
+        <option value="01">1</option>
+        <option value="02">2</option>
+        <option value="03">3</option>
+        <option value="04">4</option>
+        <option value="05">5</option>
+        <option value="06">6</option>
+        <option value="07">7</option>
+        <option value="08">8</option>
+        <option value="09">9</option>
         <option value="10">10</option>
         <option value="11">11</option>
         <option value="12">12</option>
       </select>月
       <select id="date" size="1">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
+        <option value="01">1</option>
+        <option value="02">2</option>
+        <option value="03">3</option>
+        <option value="04">4</option>
+        <option value="05">5</option>
+        <option value="06">6</option>
+        <option value="07">7</option>
+        <option value="08">8</option>
+        <option value="09">9</option>
         <option value="10">10</option>
         <option value="11">11</option>
         <option value="12">12</option>
@@ -72,12 +72,14 @@
     <button type="button" onclick="show();">表示</button>
   </form>
 
+  <!-- テーブル表示エリア -->
+  <div id="table_area">
+    <table id="data_table"></table>
+  </div>
+
   <!-- top画面へ戻る -->
   <a href="top.html">top画面へ</a>
 
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzB70xpfmp81NvE6UlsmiTxXJIFSIxiJs&callback=initTestMap">
-    </script>
   <script type="text/javascript" src="code.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

@@ -77,7 +77,7 @@ function success(pos) {
     },
     // 通信が失敗した場合
     error: function () {
-      alert('失敗らしい');
+      alert('失敗です。');
     }
   });
 }
@@ -152,7 +152,7 @@ function test() {
     },
     // 通信が失敗した場合
     error: function () {
-      alert('失敗らしい');
+      alert('失敗です。');
     }
   });
 }
@@ -161,5 +161,68 @@ function test() {
 // data.html用
 // 表の表示
 function show() {
+  const date = {
+    year: $('#year').val(),
+    month: $('#month').val(),
+    date: $('#date').val()
+  }
+  //変数の整形
+  var datetimeStart = date.year + '-' + date.month + '-' + date.date + ' 00:00:00';
+  var datetimeEnd = date.year + '-' + date.month + '-' + date.date + ' 23:59:59';
+  // サーバーサイドへPOSTする
+  $.ajax({
+    type: "post",
+    url: "data.php",
+    data: {
+      "datetimeStart": datetimeStart,
+      "datetimeEnd": datetimeEnd
+    },
+    // 通信が成功した場合　
+    success: function (data, dataType) {
+      var json = JSON.parse(data);
+      if (json.length === 0) {
+        alert('データがありません。');
+      } else {
+        // tableのための準備
+        var table_area = document.getElementById('table_area');
+        var data_table = document.getElementById('data_table');
+        table_area.removeChild(data_table);
+        var th_list = ['時間', '風向', '風速', '波高'];
+        var table = document.createElement('table');
+        table.id = 'data_table';
 
+        // tableのhead部分
+        var thead = document.createElement('thead');
+        var row_tr = document.createElement('tr');
+        thead.appendChild(row_tr);
+        for (var i = 0; i < th_list.length; i++) {
+          var row_th = document.createElement('th');
+          row_th.innerHTML = th_list[i];
+          row_tr.appendChild(row_th);
+        }
+
+        // tableのbody部分
+        var tbody = document.createElement('tbody');
+        for (var i = 0; i < json.length; i++) {
+          row_tr = document.createElement('tr');
+          tbody.appendChild(row_tr);
+          for (var j = 0; j < json[i].length; j++) {
+            var row_td = document.createElement('td');
+            row_td.innerHTML = json[i][j];
+            row_tr.appendChild(row_td);
+          }
+        }
+
+        //headとbodyをtableに入れる
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        // tableをareaに入れる
+        table_area.appendChild(table);
+      }
+    },// 通信が失敗した場合
+    error: function () {
+      alert('失敗です。');
+    }
+  });
 }

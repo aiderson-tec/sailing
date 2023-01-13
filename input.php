@@ -34,7 +34,7 @@ try {
   //サーバ切断
   $db = null;
   //フロントサイドへてきとーに返しておく
-  echo "これもらったよ。$direction,$speed,$wave,$lat,$lon";
+  echo "データを登録しました。";
 } catch (PDOException $e) {
   $isConnect = false;
   echo "MySQL への接続に失敗しました。";

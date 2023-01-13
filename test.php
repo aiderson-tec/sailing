@@ -1,4 +1,6 @@
 <?php
+header("Content-type: text/plain; charset=UTF-8");
+
 // データベース接続のための値
 define('HOSTNAME', 'localhost');
 define('DATABASE', 'sailing');
@@ -10,10 +12,10 @@ try {
   $db = new PDO('mysql:host=' . HOSTNAME . ';dbname=' . DATABASE, USERNAME, PASSWORD);
   // テーブルに登録するselect文を変数に格納
   // 20時間前までのデータで試験的に行なっている
-  $sql = "select direction, speed, wave, latposition, lngposition from test_windy_data where datetime between subtime(current_timestamp(), '20:00:00') and current_timestamp();";
+  $sql = "SELECT direction, speed, wave, latposition, lngposition from test_windy_data where datetime between subtime(current_timestamp(), '20:00:00') and current_timestamp();";
   // SQLを実行する
-  $statement = $db->query($sql);
-  $records = $statement->fetchAll();
+  $stmt = $db->query($sql);
+  $records = $stmt->fetchAll();
   // foreach文で配列の中身を一行ずつ多次元配列dataに入れていく
   $data = [];
   foreach ($records as $record) {
