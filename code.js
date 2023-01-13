@@ -113,10 +113,16 @@ function test() {
       var json = JSON.parse(data);
       var map2 = new google.maps.Map(document.getElementById('map2'), opts2);
       json.forEach(function (value) {
-        var kakudo = value[0];
+        var kakudo = Number(value[0]);
         var windSpeed = value[1];
         var latPosition = Number(value[2]);
         var lngPosition = Number(value[3]);
+        var windDirection = kakudo;
+        if (kakudo >= 180) {
+          windDirection -= 180;
+        } else {
+          windDirection += 180;
+        }
 
         var arrowPosition = {
           lat: latPosition,
@@ -131,7 +137,7 @@ function test() {
             path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
             strokeColor: 'red',
             scale: 7,
-            rotation: parseInt(kakudo),
+            rotation: parseInt(windDirection),
           },
           label: {
             text: windSpeed + 'm\n' + kakudo + '°',
@@ -155,5 +161,5 @@ function test() {
 // data.html用
 // 表の表示
 function show() {
-  
+
 }
