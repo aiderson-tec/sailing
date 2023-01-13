@@ -1,3 +1,57 @@
+// 地図表示用の関数
+function showIcon(map, opts) {
+  $.ajax({
+    type: "post",
+    url: "test.php",
+    // 通信が成功した場合　
+    success: function (data, dataType) {
+      var json = JSON.parse(data);
+      var areaMap = new google.maps.Map(document.getElementById(map), opts);
+      json.forEach(function (value) {
+        var kakudo = Number(value[0]);
+        var windSpeed = value[1];
+        var latPosition = Number(value[2]);
+        var lngPosition = Number(value[3]);
+        var windDirection = kakudo;
+        if (kakudo >= 180) {
+          windDirection -= 180;
+        } else {
+          windDirection += 180;
+        }
+
+        var arrowPosition = {
+          lat: latPosition,
+          lng: lngPosition
+        };
+
+        var arrowPosition = { lat: latPosition, lng: lngPosition };
+        var markerOptions = {
+          map: areaMap,
+          position: arrowPosition,
+          icon: {
+            path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+            strokeColor: 'red',
+            scale: 7,
+            rotation: parseInt(windDirection),
+          },
+          label: {
+            text: windSpeed + 'm\n' + kakudo + '°',
+            fontFamily: 'sans-serif',
+            fontWeight: 'bold',
+            fontSize: '12px'
+          }
+        };
+
+        var marker = new google.maps.Marker(markerOptions);
+      });
+    },
+    // 通信が失敗した場合
+    error: function () {
+      alert('失敗です。');
+    }
+  });
+}
+
 // output.html用
 // マップ表示のためのデータ
 var mapPosition = { lat: 35.361344, lng: 139.662262 };
@@ -9,37 +63,12 @@ var opts1 = {
 
 // 初期のマップ表示
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), opts1);
+  var map = new google.maps.Map(document.getElementById('map1'), opts1);
 }
 
 // ボタン押した後のマップとアイコン表示 
-function showIcon() {
-  var kakudo = 0;
-  var windSpeed = 3;
-  var latPosition = 35.362745502151;
-  var lngPosition = 139.64707275353;
-
-  var map = new google.maps.Map(document.getElementById('map'), opts1);
-
-  var arrowPosition = { lat: latPosition, lng: lngPosition };
-  var markerOptions = {
-    map: map,
-    position: arrowPosition,
-    icon: {
-      path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
-      strokeColor: 'red',
-      scale: 7,
-      rotation: parseInt(kakudo),
-    },
-    label: {
-      text: windSpeed + 'm\n' + kakudo + '°',
-      fontFamily: 'sans-serif',
-      fontWeight: 'bold',
-      fontSize: '12px'
-    }
-  };
-
-  var marker = new google.maps.Marker(markerOptions);
+function output() {
+  showIcon('map1', opts1);
 }
 
 
@@ -105,56 +134,7 @@ function initTestMap() {
 
 // データベースから出力
 function test() {
-  $.ajax({
-    type: "post",
-    url: "test.php",
-    // 通信が成功した場合　
-    success: function (data, dataType) {
-      var json = JSON.parse(data);
-      var map2 = new google.maps.Map(document.getElementById('map2'), opts2);
-      json.forEach(function (value) {
-        var kakudo = Number(value[0]);
-        var windSpeed = value[1];
-        var latPosition = Number(value[2]);
-        var lngPosition = Number(value[3]);
-        var windDirection = kakudo;
-        if (kakudo >= 180) {
-          windDirection -= 180;
-        } else {
-          windDirection += 180;
-        }
-
-        var arrowPosition = {
-          lat: latPosition,
-          lng: lngPosition
-        };
-
-        var arrowPosition = { lat: latPosition, lng: lngPosition };
-        var markerOptions = {
-          map: map2,
-          position: arrowPosition,
-          icon: {
-            path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
-            strokeColor: 'red',
-            scale: 7,
-            rotation: parseInt(windDirection),
-          },
-          label: {
-            text: windSpeed + 'm\n' + kakudo + '°',
-            fontFamily: 'sans-serif',
-            fontWeight: 'bold',
-            fontSize: '12px'
-          }
-        };
-
-        var marker = new google.maps.Marker(markerOptions);
-      });
-    },
-    // 通信が失敗した場合
-    error: function () {
-      alert('失敗です。');
-    }
-  });
+  showIcon('map2', opts2);
 }
 
 
