@@ -175,6 +175,12 @@ function show() {
         var table = document.createElement('table');
         table.id = 'data_table';
 
+        //グラフのための準備
+        var graph_list = [];
+        var date_list = [];
+        graph_list.splice(0);
+        date_list.splice(0);
+
         // tableのhead部分
         var thead = document.createElement('thead');
         var row_tr = document.createElement('tr');
@@ -196,6 +202,12 @@ function show() {
             row_td.innerHTML = json[i][j];
             row_td.id = 'data_body';
             row_tr.appendChild(row_td);
+            //グラフの配列のための準備
+            if (j == 1) {
+              graph_list.push(json[i][j]);
+            } else if (j == 0) {
+              date_list.push(json[i][j]);
+            }
           }
         }
 
@@ -205,6 +217,33 @@ function show() {
 
         // tableをareaに入れる
         table_area.appendChild(table);
+
+        //グラフを表示する
+        var graph_area = document.getElementById('graph_area');
+        var canvas = document.getElementById('graph');
+        graph_area.removeChild(canvas);
+        var graph = document.createElement('canvas');
+        graph.id = 'graph';
+        graph_area.appendChild(graph);
+        var ctx = document.getElementById('graph');
+
+        var data = {
+          labels: date_list,
+          datasets: [{
+            label: '風向',
+            data: graph_list,
+            tension: 0.5,
+            borderColor: 'rgba(128, 128, 128, 1)'
+          }]
+        };
+
+        var options = {};
+
+        var ex_chart = new Chart(ctx, {
+          type: 'line',
+          data: data,
+          options: options
+        });
       }
     },// 通信が失敗した場合
     error: function () {
