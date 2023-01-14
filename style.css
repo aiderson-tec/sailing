@@ -96,7 +96,7 @@ a.btn--lightblue:hover {
     margin-top: 20%;
   }
 
-  /*メニューバー*/
+  /*menubar用*/
   .menu_bar{
     width: 100%;
     height: 12%;
@@ -107,7 +107,7 @@ a.btn--lightblue:hover {
     width: 100%;
     height: 25%;
     text-align: center;
-    background-color: gray;
+    background-color: #333;
     color: #fff;
     font-weight: bold;
     border-radius:5px 5px 0px 0px;
@@ -174,13 +174,13 @@ a.btn--lightblue:hover {
     background:#008080;
   }
 
-  /*topボタン用*/
+  /*top.html用*/
    .btn_area {
      height: 25%;
      width: 100%;
    }
   .top_btn {
-    padding: 10px;
+    padding: 20px;
     border: none;
     border-radius: 8px;
     user-select: none;
@@ -189,7 +189,7 @@ a.btn--lightblue:hover {
 /*文字スタイル*/
 .top_btn .top_font {
   color: #fff;
-  font-size: 25vw;
+  font-size: 20vw;
   text-decoration:none;
 }
 /* ボタンをマウスホバーしたとき、ボタンを薄くする */
@@ -247,5 +247,35 @@ a.btn--lightblue:hover {
   .btn_lightBlue:active {
     box-shadow: 0 0.1em 0 #008080;
   }
+
+  /*input.html用*/
+  form {
+    margin-top: 30%;
+  }
+  .input_table {
+    width: 100%;
+  }
+  .contact_body {
+    font-size: 7vw;
+    padding: 10%;
+    text-align: center;
+  }
+  .submit {
+  width: 250px; /* 横幅指定 */
+  background-color: #333; /* 背景色 */
+  color: #fff; /* 文字色 */
+  font-weight: bold; /* 文字の太さ */
+  display: block; /* インライン要素をブロック要素に変更 */
+  margin: 0 auto; /* 中央寄せ */
+  margin-top: 15%;
+  font-size: 5vw; /* 文字の大きさ */
+  padding: 15px; /* 内側の余白 */
+  border-radius: 100vh; /* 角丸指定 */
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
 
 }
