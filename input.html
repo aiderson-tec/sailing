@@ -11,80 +11,111 @@
 </head>
 
 <body>
+  <!-- メニューバー -->
+  <div class="menu_bar">
+    <div class="title">入力ページ</div>
+    <ul class="menu">
+      <li class="menu_red"><a href="top.html">トップ</a></li>
+      <li class="menu_orange"><a href="output.html">出力</a></li>
+      <li class="menu_green"><a href="test.html">テスト</a></li>
+      <li class="menu_lightBlue"><a href="data.html">データ</a></li>
+    </ul>
+  </div>
+
   <div class="main">
     <form method="POST">
-      <div>
-        風向<select id="direction" size="1" name="wind_direction">
-          <option value="0">0</option>
-          <option value="1">10</option>
-          <option value="2">20</option>
-          <option value="3">30</option>
-          <option value="4">40</option>
-          <option value="5">50</option>
-          <option value="6">60</option>
-          <option value="7">70</option>
-          <option value="8">80</option>
-          <option value="9">90</option>
-          <option value="10">100</option>
-          <option value="11">110</option>
-          <option value="12">120</option>
-          <option value="13">130</option>
-          <option value="14">140</option>
-          <option value="15">150</option>
-          <option value="16">160</option>
-          <option value="17">170</option>
-          <option value="18">180</option>
-          <option value="19">190</option>
-          <option value="20">200</option>
-          <option value="21">210</option>
-          <option value="22">220</option>
-          <option value="23">230</option>
-          <option value="24">240</option>
-          <option value="25">250</option>
-          <option value="26">260</option>
-          <option value="27">270</option>
-          <option value="28">280</option>
-          <option value="29">290</option>
-          <option value="30">300</option>
-          <option value="31">310</option>
-          <option value="32">320</option>
-          <option value="33">330</option>
-          <option value="34">340</option>
-          <option value="35">350</option>
-          <option value="36">360</option>
-        </select>度
-        風速<select id="speed" size="1">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-        </select>m
-        波高<select id="wave" size="1">
-          <option value="0">0</option>
-          <option value="0.5">0.5</option>
-          <option value="1.0">1.0</option>
-          <option value="1.5">1.5</option>
-          <option value="2.0">2.0</option>
-          <option value="2.5">2.5</option>
-          <option value="3.0">3.0</option>
-        </select>m
-      </div>
+      <table class="input_table">
+        <div>
+          <tr>
+            <td>
+              風向
+            </td>
+            <td>
+              <select id="direction" size="1" name="wind_direction">
+                <option value="0">0°</option>
+                <option value="10">10°</option>
+                <option value="20">20°</option>
+                <option value="30">30°</option>
+                <option value="40">40°</option>
+                <option value="50">50°</option>
+                <option value="60">60°</option>
+                <option value="70">70°</option>
+                <option value="80">80°</option>
+                <option value="90">90°</option>
+                <option value="100">100°</option>
+                <option value="110">110°</option>
+                <option value="120">120°</option>
+                <option value="130">130°</option>
+                <option value="140">140°</option>
+                <option value="150">150°</option>
+                <option value="160">160°</option>
+                <option value="170">170°</option>
+                <option value="180">180°</option>
+                <option value="190">190°</option>
+                <option value="200">200°</option>
+                <option value="210">210°</option>
+                <option value="220">220°</option>
+                <option value="230">230°</option>
+                <option value="240">240°</option>
+                <option value="250">250°</option>
+                <option value="260">260°</option>
+                <option value="270">270°</option>
+                <option value="280">280°</option>
+                <option value="290">290°</option>
+                <option value="300">300°</option>
+                <option value="310">310°</option>
+                <option value="320">320°</option>
+                <option value="330">330°</option>
+                <option value="340">340°</option>
+                <option value="350">350°</option>
+                <option value="360">360°</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              風速
+            </td>
+            <td>
+              <select id="speed" size="1">
+                <option value="0">0m</option>
+                <option value="1">1m</option>
+                <option value="2">2m</option>
+                <option value="3">3m</option>
+                <option value="4">4m</option>
+                <option value="5">5m</option>
+                <option value="6">6m</option>
+                <option value="7">7m</option>
+                <option value="8">8m</option>
+                <option value="9">9m</option>
+                <option value="10">10m</option>
+                <option value="11">11m</option>
+                <option value="12">12m</option>
+                <option value="13">13m</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              波高
+            </td>
+            <td>
+              <select id="wave" size="1">
+                <option value="0">0m</option>
+                <option value="0.5">0.5m</option>
+                <option value="1.0">1.0m</option>
+                <option value="1.5">1.5m</option>
+                <option value="2.0">2.0m</option>
+                <option value="2.5">2.5m</option>
+                <option value="3.0">3.0m</option>
+              </select>
+            </td>
+          </tr>
+        </div>
+      </table>
       <button type="button" onclick="send();">登録</button>
     </form>
   </div>
-
-  <!-- top画面へ戻る -->
-  <a href="top.html">top画面へ</a>
 
   <script src="code.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>

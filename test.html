@@ -10,16 +10,29 @@
   <title>テスト画面</title>
 </head>
 
-<body style="margin: 0;">
-  <!-- アイコン表示 -->
-  <input type="button" value="Icon表示" onclick="test();" />
-  <br /><br />
+<body>
+  <!-- メニューバー -->
+  <div class="menu_bar">
+    <div class="title">テスト出力ページ</div>
+    <ul class="menu">
+      <li class="menu_red"><a href="top.html">トップ</a></li>
+      <li class="menu_blue"><a href="input.html">入力</a></li>
+      <li class="menu_orange"><a href="output.html">出力</a></li>
+      <li class="menu_lightBlue"><a href="data.html">データ</a></li>
+    </ul>
+  </div>
 
-  <!-- マップ -->
-  <div id="map2" style="width:1000px; height:600px"></div>
+  <div class="main">
+    <!-- アイコン表示 -->
+    <input type="button" value="Icon表示" onclick="test();" />
+    <br /><br />
 
-  <!-- top画面へ戻る -->
-  <a href="top.html">top画面へ</a>
+    <!-- マップ -->
+    <div id="map2"></div>
+
+    <!-- top画面へ戻る -->
+    <a href="top.html">top画面へ</a>
+  </div>
 
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzB70xpfmp81NvE6UlsmiTxXJIFSIxiJs&callback=initTestMap">
