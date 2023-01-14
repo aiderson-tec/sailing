@@ -310,7 +310,7 @@ a.btn--lightblue:hover {
     text-align: center;
     background-color: #BBBBBB;
     border: 1px solid gray;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #333;
   }
   #data_body {
     font-size: 5vw;
