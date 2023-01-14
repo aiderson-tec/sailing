@@ -1,3 +1,7 @@
+// コードの数え方
+// Ctrl + Shift + P
+// VSCodeCounter: Count lines in workspace
+
 // 地図表示用の関数
 function showIcon(map, opts) {
   $.ajax({

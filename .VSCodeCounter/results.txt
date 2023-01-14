@@ -1,13 +1,13 @@
-Date : 2023-01-14 00:38:25
+Date : 2023-01-14 01:13:53
 Directory : /Users/Ryooooo/Documents/class/sailing
-Total : 10 files,  571 codes, 64 comments, 63 blanks, all 698 lines
+Total : 10 files,  553 codes, 66 comments, 62 blanks, all 681 lines
 
 Languages
 +------------+------------+------------+------------+------------+------------+
 | language   | files      | code       | comment    | blank      | total      |
 +------------+------------+------------+------------+------------+------------+
-| HTML       |          5 |        239 |          9 |         26 |        274 |
-| JavaScript |          1 |        180 |         27 |         21 |        228 |
+| HTML       |          5 |        240 |         10 |         27 |        277 |
+| JavaScript |          1 |        161 |         28 |         19 |        208 |
 | PHP        |          3 |         78 |         27 |         11 |        116 |
 | CSS        |          1 |         74 |          1 |          5 |         80 |
 +------------+------------+------------+------------+------------+------------+
@@ -16,22 +16,22 @@ Directories
 +----------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                               | files      | code       | comment    | blank      | total      |
 +----------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                  |         10 |        571 |         64 |         63 |        698 |
+| .                                                  |         10 |        553 |         66 |         62 |        681 |
 +----------------------------------------------------+------------+------------+------------+------------+------------+
 
 Files
 +----------------------------------------------------+------------+------------+------------+------------+------------+
 | filename                                           | language   | code       | comment    | blank      | total      |
 +----------------------------------------------------+------------+------------+------------+------------+------------+
-| /Users/Ryooooo/Documents/class/sailing/code.js     | JavaScript |        180 |         27 |         21 |        228 |
+| /Users/Ryooooo/Documents/class/sailing/code.js     | JavaScript |        161 |         28 |         19 |        208 |
 | /Users/Ryooooo/Documents/class/sailing/data.html   | HTML       |         80 |          3 |          6 |         89 |
 | /Users/Ryooooo/Documents/class/sailing/data.php    | PHP        |         27 |         10 |          4 |         41 |
 | /Users/Ryooooo/Documents/class/sailing/input.html  | HTML       |         89 |          1 |          5 |         95 |
 | /Users/Ryooooo/Documents/class/sailing/input.php   | PHP        |         29 |          9 |          4 |         42 |
-| /Users/Ryooooo/Documents/class/sailing/output.html | HTML       |         23 |          2 |          5 |         30 |
+| /Users/Ryooooo/Documents/class/sailing/output.html | HTML       |         24 |          3 |          6 |         33 |
 | /Users/Ryooooo/Documents/class/sailing/style.css   | CSS        |         74 |          1 |          5 |         80 |
 | /Users/Ryooooo/Documents/class/sailing/test.html   | HTML       |         24 |          3 |          6 |         33 |
 | /Users/Ryooooo/Documents/class/sailing/test.php    | PHP        |         22 |          8 |          3 |         33 |
 | /Users/Ryooooo/Documents/class/sailing/top.html    | HTML       |         23 |          0 |          4 |         27 |
-| Total                                              |            |        571 |         64 |         63 |        698 |
+| Total                                              |            |        553 |         66 |         62 |        681 |
 +----------------------------------------------------+------------+------------+------------+------------+------------+

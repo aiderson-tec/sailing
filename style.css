@@ -1,4 +1,5 @@
 /* topページボタン */
+/*
 *,
 *:before,
 *:after {
@@ -77,4 +78,92 @@ a.btn--lightblue {
 a.btn--lightblue:hover {
   color: #fff;
   background: #87CEFA;
+}
+*/
+
+
+/*スマホ用*/
+@media screen and (max-width:428px) {
+  /*全体用*/
+  html, body{ 
+    height: 100%; 
+    font-family: 'arial unicode ms', serif;
+  }
+  a, button{
+    font-family: 'arial unicode ms', serif;
+  }
+
+  /*topボタン用*/
+   .btn_area {
+     height: 25%;
+     width: 100%;
+   }
+  .top_btn {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+  }
+/*文字スタイル*/
+.top_btn .top_font {
+  color: #fff;
+  font-size: 25vw;
+}
+/* ボタンをマウスホバーしたとき、ボタンを薄くする */
+.top_btn :hover {
+    opacity: .7;
+  }
+/* ボタンをクリックしたとき、ボタン上部に余白を作る */
+.top_btn :active {
+    margin-top: 0.2em;
+  }
+	.top_btn {
+    height: 25%;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  /* 青ボタンのスタイル */
+  .btn_blue {
+    margin-top: 5px;
+    height: 90%;
+    width: 95%;
+    background-color:#0000ff;
+    box-shadow: 0 0.3em 0 #0000c0;
+  }
+.btn_blue:active {
+    box-shadow: 0 0.1em 0 #0000c0;
+  }
+  /* オレンジボタンのスタイル */
+  .btn_orange {
+    height: 90%;
+    width: 95%;
+    background-color: #f56500;
+    box-shadow: 0 0.3em 0 #eb6100;
+  }
+  .btn_orange:active {
+    box-shadow: 0 0.1em 0 #eb6100
+  }
+  /* 緑ボタンのスタイル */
+  .btn_green {
+    height: 90%;
+    width: 95%;
+    background-color:#00ff00;
+    box-shadow: 0 0.3em 0 #00c000;
+  }
+  .btn_green:active {
+    box-shadow: 0 0.1em 0 #00c000;
+  }
+  /* 水色ボタンのスタイル */
+  .btn_lightBlue {
+    height: 90%;
+    width: 95%;
+    background-color:#00ffff;
+    box-shadow: 0 0.3em 0 #008080;
+  }
+  .btn_lightBlue:active {
+    box-shadow: 0 0.1em 0 #008080;
+  }
+
 }
