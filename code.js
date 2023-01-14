@@ -58,7 +58,13 @@ function showIcon(map, opts) {
 
 // output.html用
 // マップ表示のためのデータ
-var mapPosition = { lat: 35.361344, lng: 139.662262 };
+var mapPosition = /*{ 
+  lat: 35.361344,
+  lng: 139.662262
+}*/{
+  lat: 35.5664357,
+  lng: 139.4030089
+};
 var opts1 = {
   zoom: 13.5,
   mapTypeId: 'terrain',
@@ -124,7 +130,13 @@ function fail(error) {
 
 // test.html用
 // マップ表示のためのデータ
-var mapPosition2 = { lat: 35.6701333, lng: 139.7291589 };
+var mapPosition2 = /*{ 
+  lat: 35.2833399,
+  lng: 139.550035
+}*/{
+  lat: 35.6701333,
+  lng: 139.7291589
+};
 var opts2 = {
   zoom: 13.5,
   mapTypeId: 'terrain',
