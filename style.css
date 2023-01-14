@@ -262,7 +262,8 @@ a.btn--lightblue:hover {
     margin-top: 30%;
   }
   .input_table {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   .contact_body {
     font-size: 7vw;
@@ -299,11 +300,16 @@ a.btn--lightblue:hover {
 /*data.html用*/
   #table_area {
     margin-top: 15%;
+    padding-bottom: 15%;
   }
   #data_table {
     width: 90%;
     margin: 0 auto;
     text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 5px;
+    overflow: hidden;
   }
   #data_head {
     font-size: 5vw;
