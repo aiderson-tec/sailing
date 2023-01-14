@@ -11,8 +11,7 @@ try {
   // DB接続を試みる
   $db = new PDO('mysql:host=' . HOSTNAME . ';dbname=' . DATABASE, USERNAME, PASSWORD);
   // テーブルに登録するselect文を変数に格納
-  // 20時間前までのデータで試験的に行なっている
-  $sql = "SELECT direction, speed, wave, latposition, lngposition from test_windy_data where datetime between subtime(current_timestamp(), '20:00:00') and current_timestamp();";
+  $sql = "SELECT direction, speed, wave, latposition, lngposition from test_windy_data where datetime between subtime(current_timestamp(), '00:10:00') and current_timestamp();";
   // SQLを実行する
   $stmt = $db->query($sql);
   $records = $stmt->fetchAll();

@@ -171,7 +171,7 @@ function show() {
         var table_area = document.getElementById('table_area');
         var data_table = document.getElementById('data_table');
         table_area.removeChild(data_table);
-        var th_list = ['時間', '風向', '風速', '波高'];
+        var th_list = ['時間', '風向(°)', '風速(m)', '波高(m)'];
         var table = document.createElement('table');
         table.id = 'data_table';
 
@@ -182,6 +182,7 @@ function show() {
         for (var i = 0; i < th_list.length; i++) {
           var row_th = document.createElement('th');
           row_th.innerHTML = th_list[i];
+          row_th.id = 'data_head';
           row_tr.appendChild(row_th);
         }
 
@@ -193,6 +194,7 @@ function show() {
           for (var j = 0; j < json[i].length; j++) {
             var row_td = document.createElement('td');
             row_td.innerHTML = json[i][j];
+            row_td.id = 'data_body';
             row_tr.appendChild(row_td);
           }
         }

@@ -121,7 +121,7 @@ a.btn--lightblue:hover {
   }
   .menu li {
     width:25%;
-    height: 60%;
+    height: 65%;
     float:left;
     padding:0px 0 0 0;
     margin:0;
@@ -287,4 +287,34 @@ a.btn--lightblue:hover {
   cursor: pointer;
 }
 
+/*output.html用*/
+.map {
+  margin-top: 15%;
+  width: 100%;
+  padding-top: 100%;
+  border: 7px solid #333;
+  border-radius:5px;
+}
+
+/*data.html用*/
+  #table_area {
+    margin-top: 15%;
+  }
+  #data_table {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #data_head {
+    font-size: 5vw;
+    text-align: center;
+    background-color: #BBBBBB;
+    border: 1px solid gray;
+    border-bottom: 2px solid gray;
+  }
+  #data_body {
+    font-size: 5vw;
+    text-align: center;
+    border: 1px solid gray;
+  }
 }
