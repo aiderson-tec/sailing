@@ -138,6 +138,10 @@ $(window).scroll(function () {
 //inputのデータをデータベースに
 function send() {
   navigator.geolocation.getCurrentPosition(success, fail);
+  $("#overlay").fadeIn(500); //二度押しを防ぐloading表示
+  setTimeout(function () {
+    $("#overlay").fadeOut(500);
+  }, 3000);
 }
 
 // 位置情報が取得できた場合

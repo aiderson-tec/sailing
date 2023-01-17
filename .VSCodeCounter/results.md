@@ -1,24 +1,24 @@
 # Summary
 
-Date : 2023-01-15 00:26:03
+Date : 2023-01-17 17:59:20
 
 Directory /Users/Ryooooo/Documents/class/sailing
 
-Total : 10 files,  849 codes, 172 comments, 72 blanks, all 1093 lines
+Total : 10 files,  1127 codes, 184 comments, 90 blanks, all 1401 lines
 
 [details](details.md)
 
 ## Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| HTML | 5 | 338 | 11 | 29 | 378 |
-| CSS | 1 | 231 | 97 | 7 | 335 |
-| JavaScript | 1 | 202 | 38 | 25 | 265 |
-| PHP | 3 | 78 | 26 | 11 | 115 |
+| HTML | 5 | 408 | 16 | 33 | 457 |
+| JavaScript | 1 | 332 | 43 | 38 | 413 |
+| CSS | 1 | 301 | 99 | 8 | 408 |
+| PHP | 3 | 86 | 26 | 11 | 123 |
 
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 10 | 849 | 172 | 72 | 1,093 |
+| . | 10 | 1,127 | 184 | 90 | 1,401 |
 
 [details](details.md)
