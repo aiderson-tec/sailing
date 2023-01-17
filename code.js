@@ -2,6 +2,36 @@
 // Ctrl + Shift + P
 // VSCodeCounter: Count lines in workspace
 
+//index スクロールすると現れる
+$(window).scroll(function () {
+  var scrollAnimationElm = document.querySelectorAll('.discribe');
+  var scrollAnimationFunc = function () {
+    for (var i = 0; i < scrollAnimationElm.length; i++) {
+      var triggerMargin = 100;
+      if (window.innerHeight > scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin) {
+        scrollAnimationElm[i].classList.add('on');
+      }
+    }
+  }
+  window.addEventListener('load', scrollAnimationFunc);
+  window.addEventListener('scroll', scrollAnimationFunc);
+});
+//index スクロールすると消える
+$(window).scroll(function () {
+  var scrollAnimationElm = document.querySelectorAll('.discribe');
+  var scrollAnimationFunc = function () {
+    for (var i = 0; i < scrollAnimationElm.length; i++) {
+      var triggerMargin = 600;
+      if (window.innerHeight > scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin) {
+        scrollAnimationElm[i].classList.add('off');
+      }
+    }
+  }
+  window.addEventListener('load', scrollAnimationFunc);
+  window.addEventListener('scroll', scrollAnimationFunc);
+});
+
+
 // 地図表示用の関数
 function showIcon(map, opts) {
   $.ajax({
@@ -55,6 +85,7 @@ function showIcon(map, opts) {
     }
   });
 }
+
 
 // output.html用
 // マップ表示のためのデータ
