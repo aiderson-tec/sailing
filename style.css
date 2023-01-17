@@ -178,14 +178,15 @@ a.btn--lightblue:hover {
 .img {
   margin-top: 30%;
   text-align: center;
+  width: 100%;
 }
 .tag {
   text-align: center;
   font-weight: bold;
 }
 #logo {
-  width: 95%;
   margin: 0 auto;
+  width: 100%;
   text-align: center;
 }
 .discribe {
@@ -363,10 +364,13 @@ a.btn--lightblue:hover {
   #graph_area{
     height: 100%;
     width: 100%;
-    padding-bottom: 10%;
+    padding-bottom: 15%;
   }
   #graph{
      width: 90%;
      margin: 0 auto;
+  }
+  #map_area{
+    height: 700px;
   }
 }

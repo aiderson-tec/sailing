@@ -45,10 +45,10 @@
           </td>
         </tr>
         <tr>
-          <td class="contact_body" style="border-right: 2px solid gray;">
+          <td class="contact_body" style="border-right: 2px solid gray; background-color: whitesmoke;">
             月
           </td>
-          <td class="contact_body">
+          <td class="contact_body" style="background-color: whitesmoke;">
             <select id="month" size="1">
               <option value="01">1</option>
               <option value="02">2</option>
@@ -66,11 +66,10 @@
           </td>
         </tr>
         <tr>
-          <td class="contact_body"
-            style="border-right: 2px solid gray; background-color: #BBBBBB; border-radius: 0 0 0 10px;">
+          <td class="contact_body" style="border-right: 2px solid gray; background-color: #BBBBBB;">
             日
           </td>
-          <td class="contact_body" style="background-color: #BBBBBB; border-radius: 0 0 10px 0;">
+          <td class="contact_body" style="background-color: #BBBBBB;">
             <select id="date" size="1">
               <option value="01">1</option>
               <option value="02">2</option>
@@ -106,6 +105,24 @@
             </select>
           </td>
         </tr>
+        <tr>
+          <td class="contact_body"
+            style="background-color: whitesmoke; border-right: 2px solid gray; border-radius: 0 0 0 10px;">
+            海面
+          </td>
+          <td class="contact_body" style="background-color: whitesmoke; border-radius: 0 0 10px 0;">
+            <select id="ocean" size="1">
+              <option value="hakkei">八景</option>
+              <option value="hayama">葉山</option>
+              <option value="zushi">逗マリより</option>
+              <option value="morito">森戸海岸より</option>
+              <option value="oki">森戸沖</option>
+              <option value="sagami">相模原</option>
+              <option value="akasaka">テスト</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
       </table>
       <button type="button" class="submit" onclick="show();">表示</button>
     </form>
@@ -120,10 +137,19 @@
       <canvas id="graph"></canvas>
     </div>
 
-    <script type="text/javascript" src="code.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    <!-- マップ -->
+    <div id="map_area">
+      <div id="map3" class="map"></div>
+    </div>
+  </div>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzB70xpfmp81NvE6UlsmiTxXJIFSIxiJs">
+    </script>
+  <script type="text/javascript" src="code.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
 </body>
 
 </html>
