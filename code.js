@@ -187,24 +187,24 @@ function fail(error) {
 // output.html用
 // 初期のマップ表示
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map1'), optsSagami);
+  var map = new google.maps.Map(document.getElementById('map1'), optsHayama);
 }
 
 // ボタン押した後のマップとアイコン表示 
 function output() {
-  showIcon('map1', optsSagami);
+  showIcon('map1', optsHayama);
 }
 
 
 // test.html用
 //  初期のマップ表示
 function initTestMap() {
-  var map = new google.maps.Map(document.getElementById('map2'), optsAkasaka);
+  var map = new google.maps.Map(document.getElementById('map2'), optsHakkei);
 }
 
 // データベースから出力
 function test() {
-  showIcon('map2', optsAkasaka);
+  showIcon('map2', optsHakkei);
 }
 
 

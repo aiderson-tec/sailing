@@ -1,6 +1,5 @@
 /*スマホ用*/
-@media screen and (max-width:428px) {
-  /*全体用*/
+ /*全体用*/
   html, body { 
     height: 100%; 
     font-family: "Montserrat";
@@ -238,4 +237,3 @@
   #map_area{
     height: 700px;
   }
-}
